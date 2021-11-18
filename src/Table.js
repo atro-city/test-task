@@ -37,7 +37,7 @@ export default function Spin (props) {
                     <img src={logo} className="App-logo-small" alt="logo" />
                 </button>
             </div>
-            <p style={{"font-size":"24px"}}>Tap the little spinny to return</p>
+            <p style={{"fontSize":"24px"}}>Tap the little spinny to return</p>
         </div>
     )
 }
