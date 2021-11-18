@@ -1,25 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import Spin from './Spin';
+import Table from './Table'
+import {useState} from 'react';
 
 function App() {
+  const [data, setData] = useState(false);
+
+  const getData = (data) => {
+    setData(data);
+  }
+
+  const eraseData = () => {
+    setData(false);
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        {!data&&<Spin getData={getData}/>}
+        {data&&<Table data={data} eraseData={eraseData}/>}
       </header>
     </div>
   );
 }
 
 export default App;
+
