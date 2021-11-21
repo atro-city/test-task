@@ -4,13 +4,16 @@ import Table from './Table'
 import {useState} from 'react';
 
 function App() {
-  const [data, setData] = useState(false);
+  const [data, setData] = useState(localStorage.getItem('data')?JSON.parse(localStorage.getItem('data')):false);
 
   const getData = (data) => {
+    localStorage.setItem('data', JSON.stringify(data));
+    console.log(data)
     setData(data);
   }
 
   const eraseData = () => {
+    localStorage.removeItem('data');
     setData(false);
   }
 

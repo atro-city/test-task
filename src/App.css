@@ -66,4 +66,84 @@ td{
   text-align: left;
 }
 
+.table-button{
+  background-color: rgb(49, 47, 146); 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: calc(10px + 2vmin);
+  font-family : inherit;
+}
 
+.header-button{
+  background-color: rgb(40, 46, 65); 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: calc(10px + 2vmin);
+  font-family : inherit;
+  font-weight: bold;
+}
+
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.modal-main {
+  position:fixed;
+  background: rgb(49, 47, 146);
+  width: 300px;
+  height: auto;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
+
+.modal{
+  font-size:22px;
+}
+
+.confirm-button{
+  background-color: rgb(29, 27, 109); 
+  border-radius: 2px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 21px;
+  font-family : inherit;
+  margin:2px;
+}
+
+.cancel-button{
+  background-color: rgb(37, 35, 133); 
+  border-radius: 2px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 21px;
+  font-family : inherit;
+}

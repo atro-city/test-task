@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import logo from './static/logo.svg';
 import {useState, useEffect} from 'react';
 
 
@@ -8,6 +8,7 @@ export default function Spin (props) {
     const [isLoading, setIsLoading] = useState(false);
     const [dots, setDots] = useState('.')
 
+    
     useEffect(()=>{
         let timer;
         if(isLoading){
@@ -25,18 +26,27 @@ export default function Spin (props) {
                     default:
                         break;
                 }
-            }, 1000)
+            }, 500)
         }
         return function cleanup() {
             clearTimeout(timer);
           };
     },[dots, isLoading])
 
+    const fetchData = async () =>{
+        let array = []
+        await fetch('https://swapi.dev/api/people/')
+        .then(response => response.json())
+        .then(res => { console.log(res); array = res.results; console.log(array)})
+        await fetch('https://swapi.dev/api/people/?page=2')
+        .then(response => response.json())
+        .then(res => { console.log(array); console.log(array.concat(res.results)); getData(array.concat(res.results))})
+    }
+
     const handleClick = () =>{
         setIsLoading(true);
-        fetch('https://swapi.dev/api/people/')
-        .then(response => response.json())
-        .then(res => { getData(res.results)})
+        setTimeout(fetchData, 1000)
+        
     }
 
     return(
