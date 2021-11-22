@@ -185,27 +185,27 @@ export default function Spin (props) {
                 <tbody>
                     <tr>
                         <th>
-                            <button className='header-button' onClick={sortByName}>Name</button>
+                            <button className='header-button' onClick={sortByName}>Title</button>
                             {nameSortOrder===1&&<img src={upIcon} alt="up sort"/>}
                             {nameSortOrder===-1&&<img src={downIcon} alt="down sort"/>}
                         </th>
                         <th style={{"width":"145px"}}>
-                            <button className='header-button' onClick={sortByYear}>Birth year</button>
+                            <button className='header-button' onClick={sortByYear}>JP title</button>
                             {yearSortOrder===-1&&<img src={upIcon} alt="up sort"/>}
                             {yearSortOrder===1&&<img src={downIcon} alt="down sort"/>}
                         </th>
                         <th style={{"width":"109px"}}>
-                            <button className='header-button' onClick={sortByGender}>Gender</button>
+                            <button className='header-button' onClick={sortByGender}>Genre</button>
                             {genderSortOrder===-1&&<img src={upIcon} alt="up sort"/>}
                             {genderSortOrder===1&&<img src={downIcon} alt="down sort"/>}
                         </th>
                         <th style={{"width":"105px"}}>
-                            <button className='header-button' onClick={sortByHeight}>Height</button>
+                            <button className='header-button' onClick={sortByHeight}>Episodes</button>
                             {heightSortOrder===-1&&<img src={upIcon} alt="up sort"/>}
                             {heightSortOrder===1&&<img src={downIcon} alt="down sort"/>}
                         </th>
                         <th style={{"width":"134px"}}>
-                            <button className='header-button' onClick={sortByEyeColor}>Eye color</button>
+                            <button className='header-button' onClick={sortByEyeColor}>Release year</button>
                             {eyeSortOrder===1&&<img src={upIcon} alt="up sort"/>}
                             {eyeSortOrder===-1&&<img src={downIcon} alt="down sort"/>}
                         </th>
@@ -217,11 +217,11 @@ export default function Spin (props) {
                         if(index <= i1 && index >=i2)
                             return(
                                 <tr key={person.name} draggable="true" onDragStart={()=>handleDragStart(person)} onDragOver={handleDragOver} onDrop={()=>handleDrop(person)} >
-                                    <td className="name">{person.name}</td>
-                                    <td>{person.birth_year}</td>
-                                    <td>{person.gender}</td>
-                                    <td>{person.height}</td>
-                                    <td>{person.eye_color}</td>
+                                    <td className="name">{person.titles.en}</td>
+                                    <td>{person.titles.jp}</td>
+                                    <td>{person.genres[1]}</td>
+                                    <td>{person.episodes_count}</td>
+                                    <td>{person.season_year}</td>
                                     <td><button id="delete" className="table-button" onClick={()=>deleteRow(person)}>delete</button></td>
                                 </tr>
                             )

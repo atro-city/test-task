@@ -35,12 +35,15 @@ export default function Spin (props) {
 
     const fetchData = async () =>{
         let array = []
-        await fetch('https://swapi.dev/api/people/')
+        /*await fetch('https://swapi.dev/api/people/')
         .then(response => response.json())
         .then(res => { console.log(res); array = res.results; console.log(array)})
         await fetch('https://swapi.dev/api/people/?page=2')
         .then(response => response.json())
-        .then(res => { console.log(array); console.log(array.concat(res.results)); getData(array.concat(res.results))})
+        .then(res => { console.log(array); console.log(array.concat(res.results)); getData(array.concat(res.results))})*/
+        await fetch('https://api.aniapi.com/v1/anime')
+        .then(response => response.json())
+        .then(res => { console.log(res.data.documents); getData(res.data.documents)})
     }
 
     const handleClick = () =>{
